@@ -1,0 +1,39 @@
+{
+  "name": "CannaPi",
+  "version": "1.0.0",
+  "description": "Server Application for automated maintenance and upkeep of hydroponic systems.",
+  "main": "CannaPi.js",
+  "dependencies": {
+    "express": "^4.8.6",
+    "jade": "^1.6.0",
+    "json": "^9.0.1",
+    "path": "^0.4.9",
+    "mysql": "^2.4.3",
+    "pi-gpio": "^0.0.6"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "node cannapi.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mattwood2855/CannaPi"
+  },
+  "keywords": [
+    "hydroponics",
+    "ph",
+    "tds",
+    "ec",
+    "automated",
+    "system",
+    "pi",
+    "raspberrypi",
+    "grow"
+  ],
+  "author": "Matthew Wood",
+  "license": "Copyright 2014 Matthew Wood",
+  "bugs": {
+    "url": "https://github.com/mattwood2855/CannaPi/issues"
+  },
+  "homepage": "https://github.com/mattwood2855/CannaPi"
+}
