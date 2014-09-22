@@ -3,14 +3,15 @@
  */
 var express = require('express');
 var router = express.Router();
+var gpio = require("pi-gpio");
 
 router.use( function(req, res, next){
     console.log("Routing Middleware...");
     next();
 });
 
-router.get('/', function(req, res){
-    res.json({message: "api home"});
+router.get('/inputs/:id', function(req, res){
+    res.send(inputs[req.params.id]);
 });
 
 /**

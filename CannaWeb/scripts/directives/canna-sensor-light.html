@@ -1,0 +1,25 @@
+<div>
+<div class="hero-unit">
+    <div class="row">
+        <div class="col-sm-2">
+            <img class="canna-sensor-icon" src="/CannaPi/CannaWeb/img/icon_light.jpg">
+        </div>
+        <div class="col-sm-2">
+            <span>Name: {{selectedSensor.name}}</span>
+            <br>
+            <span>Room Number: {{selectedSensor.roomId}}</span>
+            <br>
+            <span>Current Status: {{selectedSensor.data.status}}</span>
+        </div>
+    </div>
+</div>
+<div class="hero-unit col-sm-2">
+    <div class="row">
+        <span>Power:</span>
+        <input type="checkbox" name="onOffSwitch" ng-model={{selectedSensor.data.status}}>
+    </div>
+</div>
+    <script>
+        $("[name='onOffSwitch']").bootstrapSwitch();
+    </script>
+</div>

@@ -1,16 +1,17 @@
 /**
  * Created by Matt on 8/29/2014.
  */
-var express = require("express");
-var router = express.Router();
+var router = require("express").Router();
+var viewsDirectory = __dirname + '/views/';
 
 router.use( function(req, res, next){
-    console.log("Routing Middleware...");
+    console.log("CannaWeb: Middleware function executed");
     next();
 });
 
 router.get('/', function(req, res){
-    res.send('index');
+    console.log("CannaWeb: User routed to index page");
+    res.sendFile(__dirname + '/index.html');
 });
 
 exports.Router = router;

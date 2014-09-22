@@ -1,0 +1,34 @@
+<!-- Left Navbar -->
+<div class="container-fluid" style="margin-top: 50px">
+    <div class="row">
+
+        <!-- Left hand navigation menu -->
+        <div class="col-sm-3 col-md-2 sidebar">
+            <ul ng-repeat="sensorType in types | orderBy: +sensorType" class="nav nav-sidebar">
+                <li>{{sensorType | uppercase}}'S</li>
+                <li class=".nav-sensor"
+                    ng-repeat="sensor in sensors | filter: { type: sensorType }"
+                    ng-click="selectSensor($event)"
+                    data-sensor-id="{{sensor.id}}">
+                        <a href="">{{sensor.name}}</a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Sensor Details pane -->
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+            <h1 class="page-header">Dashboard</h1>
+            <div ng-switch on="selectedSensor.type">
+                <div ng-switch-when="fan"><div class="canna-sensor-widget" data-canna-sensor-fan></div></div>
+                <div ng-switch-when="light"><div class="canna-sensor-widget"  data-canna-sensor-light></div></div>
+                <div ng-switch-when="ph"><div class="canna-sensor-widget"  data-canna-sensor-ph></div></div>
+                <div ng-switch-when="tds"><div data-canna-sensor-tds></div></div>
+                <div ng-switch-when="temp"><div data-canna-sensor-tds></div></div>
+                <div ng-switch-default><span>Please select a sensor on the left panel to see the details</span></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
