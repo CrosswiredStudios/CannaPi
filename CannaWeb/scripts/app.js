@@ -2,7 +2,7 @@
  * Created by Matt on 9/20/2014.
  */
 
-var app = angular.module('CannaWebApp', ['ngRoute', 'ngAnimate'])
+var app = angular.module('CannaWebApp', ['ngRoute', 'ngResource'])
     .config(['$routeProvider',
         function($routeProvider){
         $routeProvider

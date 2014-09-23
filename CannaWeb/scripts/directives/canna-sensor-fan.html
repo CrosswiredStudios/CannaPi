@@ -1,14 +1,56 @@
-<div class="hero-unit">
-    <div class="row">
-        <div class="col-sm-2">
-            <img class="canna-sensor-icon" src="/CannaPi/CannaWeb/img/icon_fan.jpg">
+<div>
+    <div class="hero-unit">
+        <div class="row">
+            <div class="col-sm-2">
+                <img class="canna-sensor-icon" src="/CannaPi/CannaWeb/img/icon_fan.jpg">
+            </div>
+            <div class="col-sm-2">
+                <span>Name: {{selectedSensor.name}}</span>
+                <br>
+                <span>Room Number: {{selectedSensor.roomId}}</span>
+                <br>
+                <span>Current Status: {{selectedSensor.data.status}}</span>
+            </div>
         </div>
-        <div class="col-sm-2">
-            <span>Name: {{selectedSensor.name}}</span>
-            <br>
-            <span>Room Number: {{selectedSensor.roomId}}</span>
-            <br>
-            <span>Current Status: {{selectedSensor.data.status}}</span>
+    </div>
+    <div class="hero-unit hero-unit-input col-sm-2">
+        <div class="row">
+            <table>
+                <tr>
+                    <td style="padding-right: 10px;">
+                        <span>Power</span>
+                    </td>
+                    <td>
+                        <div class="switch">
+                            <input type="checkbox" class="cmn-toggle cmn-toggle-round" id="onOffSwitch" ng-checked="(selectedSensor.data.status == 'off') ? '' : 'on'">
+                            <label for="onOffSwitch"></label>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="col-sm-1"></div>
+    <div class="hero-unit hero-unit-input col-sm-2">
+        <div class="row">
+            <table>
+                <tr>
+                    <td style="padding-right: 10px;">
+                        <span>On:</span>
+                    </td>
+                    <td>
+                        <input type="time" id="fanOnTime">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span>Off:</span>
+                    </td>
+                    <td>
+                        <input type="time" id="fanOffTime">
+                    </td>
+                </tr>
+            </table>
         </div>
     </div>
 </div>

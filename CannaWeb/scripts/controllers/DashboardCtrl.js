@@ -3,12 +3,26 @@
  */
 angular.module('CannaWebApp').controller('DashboardCtrl', [
         '$scope',
-        'sensors',
-        function($scope, sensors, $routeParams){
+        'sensorFactory',
+        function($scope, sensorFactory){
+
             $scope.selectedSensor = null;
-            $scope.sensors = sensors.sensorList;
-            $scope.types = sensors.typesList;
-            $scope.lightOn = false;
+
+            $scope.sensors = sensorFactory.query();
+            $scope.sensors.$promise.then(function(result){
+                $scope.sensors = result;
+                // Dynamically build a list of all sensor types
+                var lookup = {};
+                var result = [];
+                for (var item, i = 0; item = $scope.sensors[i++];) {
+                    var name = item.type;
+                    if (!(name in lookup)) {
+                        lookup[name] = 1;
+                        result.push(name);
+                    }
+                }
+                $scope.types = result;
+            });
 
 
 
