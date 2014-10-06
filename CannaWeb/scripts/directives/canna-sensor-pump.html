@@ -1,0 +1,52 @@
+<div>
+    <div class="hero-unit container">
+        <div class="row">
+            <div class="col-sm-2">
+                <img class="canna-sensor-icon" src="/CannaPi/CannaWeb/img/icon_pump.png">
+            </div>
+            <div class="col-sm-4">
+                <span><h1><b>{{selectedSensor.name}}</b></h1></span>
+            </div>
+            <div class="col-sm-2">
+                <span>Room Number: {{selectedSensor.roomId}}</span>
+            </div>
+            <div class="col-sm-2 pull-right">
+                <table style="margin-top: 35px;">
+                    <tr>
+                        <td style="padding-right: 10px;">
+                            <span>Power</span>
+                        </td>
+                        <td>
+                            <div class="switch">
+                                <input type="checkbox" class="cmn-toggle cmn-toggle-round" id="onOffSwitch" ng-model="selectedSensor.data.status" ng-checked="(selectedSensor.data.status == '0') ? '' : '1'" ng-change="setLight({{selectedSensor.id}}, selectedSensor.data.status)">
+                                <label for="onOffSwitch"></label>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="hero-unit hero-unit-input container">
+        <div class="row">
+            <table>
+                <tr>
+                    <td style="padding-right: 10px;">
+                        <span>On:</span>
+                    </td>
+                    <td>
+                        <input type="time" id="fanOnTime">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span>Off:</span>
+                    </td>
+                    <td>
+                        <input type="time" id="fanOffTime">
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>

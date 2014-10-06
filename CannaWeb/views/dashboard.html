@@ -5,7 +5,7 @@
         <!-- Left hand navigation menu -->
         <div class="col-sm-3 col-md-2 sidebar">
             <ul ng-repeat="sensorType in types | orderBy: +sensorType" class="nav nav-sidebar">
-                <li>{{sensorType | uppercase}}'S</li>
+                <li>{{sensorType | uppercase}}S</li>
                 <li class=".nav-sensor"
                     ng-repeat="sensor in sensors | filter: { type: sensorType }"
                     ng-click="selectSensor($event)"
@@ -22,6 +22,7 @@
                 <div ng-switch-when="fan"><div class="canna-sensor-widget" data-canna-sensor-fan></div></div>
                 <div ng-switch-when="light"><div class="canna-sensor-widget"  data-canna-sensor-light></div></div>
                 <div ng-switch-when="ph"><div class="canna-sensor-widget"  data-canna-sensor-ph></div></div>
+                <div ng-switch-when="pump"><div class="canna-sensor-widget"  data-canna-sensor-pump></div></div>
                 <div ng-switch-when="tds"><div data-canna-sensor-tds></div></div>
                 <div ng-switch-when="temp"><div data-canna-sensor-tds></div></div>
                 <div ng-switch-default><span>Please select a sensor on the left panel to see the details</span></div>

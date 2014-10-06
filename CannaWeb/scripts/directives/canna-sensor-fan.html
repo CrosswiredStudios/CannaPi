@@ -4,12 +4,11 @@
             <div class="col-sm-2">
                 <img class="canna-sensor-icon" src="/CannaPi/CannaWeb/img/icon_fan.jpg">
             </div>
+            <div class="col-sm-4">
+                <span><h1><b>{{selectedSensor.name}}</b></h1></span>
+            </div>
             <div class="col-sm-2">
-                <span>Name: {{selectedSensor.name}}</span>
-                <br>
                 <span>Room Number: {{selectedSensor.roomId}}</span>
-                <br>
-                <span>Current Status: {{selectedSensor.data.status}}</span>
             </div>
         </div>
     </div>
@@ -22,7 +21,7 @@
                     </td>
                     <td>
                         <div class="switch">
-                            <input type="checkbox" class="cmn-toggle cmn-toggle-round" id="onOffSwitch" ng-checked="(selectedSensor.data.status == 'off') ? '' : 'on'">
+                            <input type="checkbox" class="cmn-toggle cmn-toggle-round" id="onOffSwitch" ng-checked="(selectedSensor.data.status == '0') ? '' : '1'">
                             <label for="onOffSwitch"></label>
                         </div>
                     </td>
